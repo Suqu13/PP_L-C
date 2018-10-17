@@ -1,0 +1,6 @@
+SCALA- g³êbokoœæ= 4, bo liczymy po rekordach aktywacji( inaczej ramkach stosu),
+taki rekord zawiera zmienne lokalne, ³¹cze dostêpu, adres powrotu, argument,
+wartoœæ zwracan¹.
+
+OCAML- g³êbokoœæ= 1, bo kompilator potrafi zoptymalizowaæ proces i przetworzyæ 
+go na kod imperatywny.
