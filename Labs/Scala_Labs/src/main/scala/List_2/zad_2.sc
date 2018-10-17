@@ -10,8 +10,8 @@ def fibonacci(n: Int): Int = {
   fibonacci_tailRec(0, 0, 1)
 }
 
-fibonacci(10);
-fibonacci(0);
-fibonacci(1);
-fibonacci(6);
-fibonacci(19);
+fibonacci(10)
+fibonacci(0)
+fibonacci(1)
+fibonacci(6)
+fibonacci(19)
