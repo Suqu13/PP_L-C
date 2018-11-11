@@ -2,13 +2,16 @@ type 'a nlist = Koniec | Element of 'a * ('a nlist);;
 type 'a llist = LKoniec | LElement of 'a * (unit -> 'a llist);;
 
 let podziel nl = 
-  let rec inside = function
-      (_,Koniec) -> (Koniec, Koniec)
-    | (n,Element(v, nl)) -> 
-        let nP = inside((n + 1), nl) in
-          if n mod 2 = 0 then (fst nP, Element(v, snd nP))
-          else (Element(v, fst nP), snd nP)
-  in inside((0), nl);;
+  let rec odd = function
+      (_,Koniec) -> Koniec
+    | (n,Element(v, nl)) -> if n mod 2 <> 0 then Element(v, odd(n+1, nl)) 
+        else odd(n+1, nl)
+  in
+  let rec even = function
+      (_,Koniec) -> Koniec
+    | (n,Element(v, nl)) -> if n mod 2 = 0 then Element(v, even(n+1, nl)) 
+        else even(n+1, nl)
+  in (odd((0), nl), even((0), nl));;
 
 
 podziel (Element(5, Element(6, Element(3, Element(2, Element(1, Koniec))))));;
