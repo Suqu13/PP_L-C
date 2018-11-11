@@ -1,7 +1,7 @@
-let insertionSort comparison xs =
-  let rec addInProperPlace x = function
+let insertionSort order xs =
+  let rec addInProperPlace x  = function
       [] -> [x]
-    | hd::tl as list -> if comparison x hd then x::list else hd::addInProperPlace x tl
+    | hd::tl as list -> if order x hd then x::list else hd::addInProperPlace x tl
   in
     List.fold_left (fun sorted x -> addInProperPlace x sorted) [] xs;;
 

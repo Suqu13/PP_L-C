@@ -22,7 +22,7 @@ val tt = Node(1,
   )
 )
 
-def breadthBT[A](bt: BT[A]): List[A] = {
+def breadthBT[A](bt: BT[A]):List[A] = {
   def inside[A](list: List[BT[A]]): List[A] = {
     list match {
       case Nil => Nil
