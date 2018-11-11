@@ -1,11 +1,13 @@
 sealed trait Graphs[A]
 case class Graph[A](succ: A => List[A]) extends Graphs[A]
 val g = Graph((i: Int) => i match {
-  case 0 => List(3)
+  case 0 => List(3,6)
   case 1 => List(0, 2, 4)
-  case 2 => List(1)
+  case 2 => List(1,5,6)
   case 3 => Nil
   case 4 => List(0, 2)
+  case 5 => Nil
+  case 6 => List(1,4)
   case n => throw new Exception("Graph g: node " + n + " doesn't exist")
 })
 
