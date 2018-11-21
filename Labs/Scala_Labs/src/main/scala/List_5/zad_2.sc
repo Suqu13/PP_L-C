@@ -12,7 +12,3 @@ ldzialanie(Stream.from(3))(Stream.from(7))((a: Int) => (b: Int) => a + b).take(1
 val plus = (x: Int, y: Int, z: Int) => x + y + z;
 val add = (x: Int) => (y: Int) => (z: Int) => x + y + z;
 
-(plus curried 4) (3)(1);
-Function.uncurried(add)(4, 3, 1);
-
-def sumProd(xs: List[Int]): (Int, Int) = xs.foldLeft(0, 1)((acc: (Int, Int), x: Int) => ((acc._1 + x), (acc._2 * x)))
