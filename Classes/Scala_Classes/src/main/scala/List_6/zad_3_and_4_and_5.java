@@ -7,7 +7,7 @@ public class zad_3_and_4_and_5 {
             return m == n;
         }
 
-        static boolean isEqual2(Integer m, Integer n) { // Integer - klasa, pracuje na liczbach -128 do 127 jako tablicy, do tych wartości zwraca ten sam obiekt,
+        static boolean isEqual2(Integer m, Integer n) { // Integer - klasa, pracuje na liczbach (cashowanie) -128 do 127 jako tablicy, do tych wartości zwraca ten sam obiekt,
                                                         // więc ich porównanie za pomocą operatora == ma sens, po przekroczeniu limitu zostanie zwrócony inny
                                                         // obiekt, z inną listą
             return m == n;

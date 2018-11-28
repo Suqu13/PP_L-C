@@ -9,12 +9,8 @@ def partition[A](order: A => A => Boolean)(array: Array[A])(l: Int)(r: Int): (In
   var j = r
   val pivot = array((l + r) / 2)
   while (i <= j) {
-    while (order(array(i))(pivot)) {
-      i += 1
-    }
-    while (order(pivot)(array(j))) {
-      j -= 1
-    }
+    while (order(array(i))(pivot)) i += 1
+    while (order(pivot)(array(j))) j -= 1
     if (i <= j) {
       swap(array)(i)(j)
       i += 1
@@ -27,11 +23,11 @@ def partition[A](order: A => A => Boolean)(array: Array[A])(l: Int)(r: Int): (In
 def quick[A](order: A => A => Boolean)(array: Array[A])(l: Int)(r: Int): Unit = {
   if (l < r) {
     val (i, j) = partition(order)(array)(l)(r)
-    if (j-l < i -r) {
-      val _ = quick(order)(array)(l)(j)
+    if (j-l < r - i) {
+      quick(order)(array)(l)(j)
       quick(order)(array)(i)(r)
     } else {
-      val _ = quick(order)(array)(i)(r)
+      quick(order)(array)(i)(r)
       quick(order)(array)(l)(j)
     }
   }

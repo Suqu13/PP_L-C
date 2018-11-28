@@ -2,8 +2,8 @@ sealed trait lBT[+A]
 case object LEmpty extends lBT[Nothing]
 case class LNode[+A](elem: A, left: () => lBT[A], right: () => lBT[A]) extends lBT[A]
 
-def createlBT(n: Int): lBT[Int] = {
-  LNode(n, () => createlBT(2 * n), () => createlBT(2 * n + 1))
+def lTree(n: Int): lBT[Int] = {
+  LNode(n, () => lTree(2 * n), () => lTree(2 * n + 1))
 }
 
 def breadthlBT(root: lBT[Int]): Stream[Int] = {
@@ -17,4 +17,4 @@ def breadthlBT(root: lBT[Int]): Stream[Int] = {
   breadth(root::Nil)
 }
 
-breadthlBT(createlBT(1)).take(10).force
+breadthlBT(lTree(1)).take(10).force
