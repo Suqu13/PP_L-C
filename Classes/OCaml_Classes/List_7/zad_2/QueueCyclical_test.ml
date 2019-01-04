@@ -1,0 +1,15 @@
+let q = QueueCyclical.empty 4;;
+QueueCyclical.enqueue(1, q);;
+QueueCyclical.enqueue(2, q);;
+QueueCyclical.enqueue(3, q);;
+QueueCyclical.enqueue(4, q);;
+QueueCyclical.isFull q;;
+QueueCyclical.first q;;
+QueueCyclical.dequeue q;;
+QueueCyclical.first q;;
+QueueCyclical.dequeue q;;
+QueueCyclical.first q;;
+QueueCyclical.dequeue q;;
+QueueCyclical.first q;;
+QueueCyclical.dequeue q;;
+QueueCyclical.isEmpty q;;
