@@ -8,12 +8,15 @@ abstract public class AbstractClock_Function {
         this.tittle = tittle;
     }
 
-    public String getTittle(){
+    public String getTittle() {
         return tittle;
     }
 
     public abstract void addAction();
+
     public abstract void changeDetails();
+
     public abstract void showActions();
+
     public abstract void runFunction();
 }

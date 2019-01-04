@@ -6,11 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static Tools.Input_Data.*;
+import static Tools.Input_Data.inputHnMnS;
 import static Tools.PrintNRet.ioMakeIndex;
 import static Tools.PrintNRet.printMark;
-
-//TODO MOZE LEPSZE DZIEDZICZENIE?
 
 public class Alarm_Function extends AbstractClock_Function {
 
@@ -41,7 +39,7 @@ public class Alarm_Function extends AbstractClock_Function {
             System.out.println("~~~Nothing to change!~~~");
         } else {
             showAlarms();
-            change(ioMakeIndex(1,alarms.size()));
+            change(ioMakeIndex(1, alarms.size()));
         }
     }
 
@@ -57,7 +55,7 @@ public class Alarm_Function extends AbstractClock_Function {
         } else {
             showAlarms();
             System.out.println("\n" + (alarms.size() + 1) + ". Back");
-            int input = ioMakeIndex(1, alarms.size()+1);
+            int input = ioMakeIndex(1, alarms.size() + 1);
             if (input >= alarms.size())
                 return;
             alarms.get(input).start();
@@ -83,7 +81,7 @@ public class Alarm_Function extends AbstractClock_Function {
 
     private void change(int choose) {
         System.out.print("1. Cancel alarm\n2. Change alarm time\n3. Back");
-        int i = ioMakeIndex(1,3);
+        int i = ioMakeIndex(1, 3);
         if (i == 1) {
             alarms.get(choose).cancel();
         } else if (i == 2) {

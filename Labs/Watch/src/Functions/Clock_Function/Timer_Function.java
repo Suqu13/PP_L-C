@@ -37,13 +37,12 @@ public class Timer_Function extends AbstractClock_Function {
     public void changeDetails() {
         if (timers.isEmpty()) {
             System.out.println("~~~Nothing to change!~~~");
-            return;
         } else {
             showATimers();
-            System.out.print("\nSelect number (1-" + timers.size() + "): ");
+            int input = ioMakeIndex(1, timers.size());
+            change(input);
         }
-        int choose = inputIntRange(1, timers.size()) - 1;
-        change(choose);
+
     }
 
     @Override
@@ -57,7 +56,10 @@ public class Timer_Function extends AbstractClock_Function {
             System.out.println("~~~Nothing to run!~~~");
         } else {
             showATimers();
-            timers.get(ioMakeIndex(1, timers.size())).start();
+            System.out.println((timers.size() + 1) + ". Back");
+            int input = ioMakeIndex(1, timers.size() + 1);
+            if (input < timers.size())
+                timers.get(input).start();
         }
     }
 

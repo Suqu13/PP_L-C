@@ -29,13 +29,13 @@ public class CurrentTime_Function extends AbstractClock_Function {
 
     @Override
     public void changeDetails() {
-        if(my_clock.isToCancel()) {
+        if (my_clock.isToCancel()) {
             System.out.println("~~~Clock is turned off!~~~");
         } else {
             System.out.println("1. Change owner");
             System.out.println("2. Turn OFF");
             System.out.println("3. Back");
-            int input = ioMakeIndex(1,3);
+            int input = ioMakeIndex(1, 3);
             if (input == 0) {
                 System.out.print("\nNew owner name: ");
                 Scanner sc = new Scanner(System.in);
@@ -56,8 +56,6 @@ public class CurrentTime_Function extends AbstractClock_Function {
         my_clock.start();
         my_clock.setToCancel(false);
     }
-
-
 
 
 }

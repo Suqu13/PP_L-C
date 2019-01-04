@@ -44,9 +44,10 @@ public class My_Clock extends Thread implements My_Device {
             }
         }
     }
+
     @Override
     public void display() {
-        String tittle = "####CLOCK#####";
+        String tittle = "   ####CLOCK#####";
         System.out.println("\n" + tittle);
         System.out.println("Owner: " + owner + "\n" + "Time: " + currentTime + "\n" + "Date: " + currentDate);
         printMark('#', tittle);

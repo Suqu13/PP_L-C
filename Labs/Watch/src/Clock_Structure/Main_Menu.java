@@ -9,7 +9,6 @@ import Functions.SmartHome_Function.Home_Lighting;
 import java.util.ArrayList;
 import java.util.List;
 
-import static Tools.Input_Data.inputIntRange;
 import static Tools.PrintNRet.ioMakeIndex;
 import static Tools.PrintNRet.printMark;
 

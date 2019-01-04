@@ -11,7 +11,7 @@ public class PrintNRet {
     }
 
     public static int ioMakeIndex(int left, int righ) {
-        System.out.print("\nSelect number of alarm to run (" + left + "-" + righ + "): ");
+        System.out.print("\nSelect number. (" + left + "-" + righ + "): ");
         return inputIntRange(left, righ) - 1;
     }
 }

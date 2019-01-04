@@ -55,7 +55,7 @@ public class My_Alarm extends Thread implements My_Device {
     }
 
     @Override
-    public void display(){
+    public void display() {
         System.out.println("\n^*^*^*^*^*^*^ \nALARM!: " + alarmTime + "\n^*^*^*^*^*^*^");
     }
 
