@@ -11,7 +11,7 @@ class Player(val name: String, players: => List[ActorRef]) extends Actor {
     case Ball(throws) => {
       if (throws >= 500)
         context.system.terminate()
-      println(name + ": " + throwsNum + " Ball: " + throws)
+      println(name + " throws: " + throwsNum + " Ball: " + throws)
       throwsNum += 1
       this.players((new Random).nextInt(players.length)) ! Ball(throws + 1)
     }

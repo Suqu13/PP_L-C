@@ -15,7 +15,7 @@ public class BoundedBuffer implements Produce, Consume {
         	  System.out.println(Thread.currentThread().getName()+" waiting with " + x); 
         	  wait(); 
           } catch (InterruptedException e) {System.out.println(e);}
-        elems[in] = x; in = (in + 1) % N ; n += 1; //TODO: Wrzucenie watrości x do kontenera, wyliczenie następnego potencjalnego miejsca, inkrementacja aktualnie zajmowaego miejsca tablicy
+        elems[in] = x; in = (in + 1) % N ; n += 1; //TODO: Wrzucenie watrości x do kontenera, wyliczenie następnego potencjalnego miejsca, inkrementacja aktualnie zajmowaego miejsca w tablicy
         System.out.println(Thread.currentThread().getName()+" produced: " + x);
         if (n == 1) notifyAll(); //TODO: Powiadomienie wszystkich producentów/ wątków iż należy wznowić produkcje
     }
@@ -32,6 +32,7 @@ public class BoundedBuffer implements Produce, Consume {
         return x;
     }
 }
+
 //TODO: Wykorzystywany buffor cykliczny
 //TODO: Użycie notify() nie byłoby bezpieczne, gdyż musimy wtedy precyzować wątek który ma być wznowiony/ odblokowany.
 //TODO: Nie mamy kontroli nad tym, które wątki są blokowane, więc byłoby to niewykonalne. Mogłoby dojść do bezpośredniego zakleszczenia
